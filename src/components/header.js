@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { View, Text, StatusBar, StyleSheet } from 'react-native';
 
 let progress = 0.5;
 
@@ -7,12 +7,10 @@ class Header extends React.Component {
     constructor(props){
         super(props);
         this.increaseProgress(0.1);
-        // console.log('tech_stack constructor');
     }
 
     componentWillMount() {
         this.increaseProgress(0.1);;
-        // console.log('tech_stack componentWillMount');
     }
 
     increaseProgress(increaseValue) {
@@ -22,17 +20,28 @@ class Header extends React.Component {
     }
 
     render() {
-        // console.log('tech_stack render');
         this.increaseProgress(0.2)
         return (
             <View>
-                <StatusBar backgroundColor="blue" barStyle="light-content" />
-                <Text style={{ marginLeft: 5, marginBottom: 10, marginTop: 10, fontSize: 20, justifyContent: 'center', textAlign: 'center' }}>
+                <StatusBar backgroundColor="#2626ed" barStyle="light-content" />
+                <Text style={styles.header}>
                     {this.props.text}
                 </Text>
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    header: {
+        paddingBottom: 10,
+        paddingTop: 10,
+        fontSize: 20,
+        justifyContent: 'center',
+        textAlign: 'center',
+        backgroundColor: '#2626ed',
+        color: '#fff'
+    }
+})
 
 export default Header;
