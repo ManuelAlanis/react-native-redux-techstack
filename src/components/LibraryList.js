@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import LottieView from 'lottie-react-native';
 import { View,
     StyleSheet,
     Animated,
@@ -55,12 +56,18 @@ class LibraryList extends React.Component {
                 { 
                     !this.state.isFlatList ? 
                     <View>
-                        <Text style={styles.emptyList}>
-                            You don't have any element on the list
-                        </Text> 
-                        <Text style={styles.instructionsList}>
-                            Just pull to get your list
-                        </Text>
+                        <View style={{ flex: 1 }}>
+                            
+                        </View>
+                        <View>
+                            <LottieView source={require('../animations/empty_box.json')} autoPlay loop />
+                            <Text style={styles.emptyList}>
+                                You don't have any element on the list
+                            </Text> 
+                            <Text style={styles.instructionsList}>
+                                Just pull to get your list
+                            </Text>
+                        </View>
                     </View> : null
                 }
                 {
