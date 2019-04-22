@@ -11,7 +11,7 @@ import { View,
     Text
 } from 'react-native';
 import ListItem from './ListItem'
-
+import Camera from './Camera';
 
 class LibraryList extends React.Component {
     constructor() {
@@ -44,6 +44,7 @@ class LibraryList extends React.Component {
 
     render() {
         return(
+            <Camera></Camera>
             <View>
                 <ScrollView
                     refreshControl={
