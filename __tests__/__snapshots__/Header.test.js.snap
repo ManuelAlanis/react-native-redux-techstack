@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for header views and functions test renders correctly 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#2626ed",
+        "color": "#fff",
+        "fontSize": 20,
+        "justifyContent": "center",
+        "paddingBottom": 10,
+        "paddingTop": 10,
+        "textAlign": "center",
+      }
+    }
+  />
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Text>
+      Press here to kill you...
+    </Text>
+  </View>
+</View>
+`;

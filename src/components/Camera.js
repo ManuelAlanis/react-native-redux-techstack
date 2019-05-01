@@ -4,11 +4,16 @@ import { RNCamera } from 'react-native-camera';
 
 class Camera extends React.Component {
 
+    constructor(props){
+        super(props);
+    }
+
     takePicture = async function() {
         if (this.camera) {
             const options = { quality: 0.5, base64: true };
             const data = await this.camera.takePictureAsync(options);
             console.log(data.uri);
+            console.log('tech_stack rawData', data.uri.rawData);
         }
     };
 
@@ -35,7 +40,8 @@ class Camera extends React.Component {
                     buttonNegative: 'Cancel',
                 }}
                 onGoogleVisionBarcodesDetected={({ barcodes }) => {
-                    console.log('barcodes', barcodes);
+                    console.log('rawData', barcodes[0].rawData);
+                    this.props.callback(barcodes[0]);
                 }}
                 />
                 <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>

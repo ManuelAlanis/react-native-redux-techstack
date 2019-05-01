@@ -7,10 +7,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "jest-enzyme": "^7.0.2",
     "lottie-react-native": "^2.6.1",
+    "prop-types": "^15.7.2",
     "react": "16.8.3",
+    "react-dom": "^16.8.6",
     "react-native": "0.59.4",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
+    "react-native-communications": "^2.2.1",
     "react-redux": "^7.0.2",
     "redux": "^4.0.1"
   },
@@ -20,9 +26,33 @@
     "babel-jest": "^24.7.1",
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.53.1",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "react-dom": "^16.3.1",
+    "enzyme": "³.3.0"
   },
   "jest": {
-    "preset": "react-native"
-  }
+    "preset": "react-native",
+    "verbose": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 10,
+        "functions": 10,
+        "lines": 10,
+        "statements": -10
+      }
+    },
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**babel.config.js**",
+      "!**/coverage/lcov-report/**",
+      "!**block-navigation.js**",
+      "!**prettify.js**",
+      "!**sorter.js**"
+    ]
+  },
+  "setupFiles": [
+    "<rootDir>/__scripts__/throw-on-prop-type-error.js"
+  ]
 }

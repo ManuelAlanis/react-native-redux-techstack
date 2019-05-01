@@ -10,7 +10,7 @@ const App = () => {
     return(
         <Provider store={createStore(reducers)}>
             <View style={{ flex: 1 }}>
-                <Header text="Home"/>
+                <Header text="Home" />
                 <LibraryList />
             </View>
         </Provider>
